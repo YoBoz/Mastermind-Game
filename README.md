@@ -1,10 +1,4 @@
-# f28hs-2022-23-cwk2-sys
-
-Coursework 2 in F28HS "Hardware-Software Interface" on Systems Programming in C and ARM Assembler
-
-The [CW specification is here](http://www.macs.hw.ac.uk/~hwloidl/Courses/F28HS/Coursework_F28HS_CW2_2023.pdf)
-
-Use [this link](https://docs.google.com/spreadsheets/d/1MMBCydDlHNhF7g4ZgSZD5w9F9BvCjM36NbdvMniP3lc/edit?usp=sharing) to **sign-up as a pair** for this pair project.
+# Mastermind Game
 
 Links:
 - You can use any machine with an installation of the `gcc` C compiler for running the C code of the game logic
@@ -21,20 +15,6 @@ This folder contains the following CW2 specification template files for the sour
 - `testm.c`       ... a testing function to test C vs Assembler implementations of the matching function
 - `test.sh`       ... a script for unit testing the matching function, using the -u option of the main prg
 
-## Gitlab usage
-
-**Fork** and **Clone** this gitlab repo to get started on the coursework.
-
-Complete the functions in `master-mind.c` and in `lcdBinary.c`. Initially, you can implement these as C
-functions. However, for the final implementation, the low-level functions for controlling LED, button, and
-LCD display should be implemented in inline Assembler (in `lcdBinary.c`). Note that the **matching function**,
-for calculating the number of exact and approximate matches also needs to be implemented in ARM Assembler.
-The file `mm-matches.s` contains a template this Assembler code.
-
-You can test basic functionality by using the `testm.c` C function and the `test.sh` shell script (see below).
-
-**Push** to the repo and ask questions in the comments box to get help.
-
 ## Building and running the application
 
 You can build the main C program (in `master-mind.c`), and the `testm.c` testing function, by typing
@@ -48,16 +28,6 @@ and do unit testing on the matching function
 
 or alternatively check C vs Assembler version of the matching function
 > make test
-
-For the Assembler part, you need to edit the `mm-matches.s` file, compile and test this version on the Raspberry Pi.
-See the test input data in the `secret` and `guess` structures at the end of the file, for testing.
-
-After having tested the components separately, integrate both so that the C program (in `master-mind.c`)
-calls the ARM Assembler code (in `mm-matches.s`) for the matching function.
-For controlling the external devices of LED, LCD and button use inline Assembler code, as discussed in
-the matching lecture in the course.
-
-The final version of the code should be pushed to this repo, and also submitted through Canvas, together with the report and video.
 
 A test script is available to do unit-testing of the matching function. Run it like this from the command line
 > sh ./test.sh
